@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>大圣巴巴的博客 | 记录生活点滴，分享前端技术，学习新的知识，共同进步成长！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="水平垂直居中                   document.addEventListener(&quot;DOMContentLoaded&quot;,function () {             var btn_pop = document.querySelector(&quot;#btn_pop&quot;);             var pop = document.queryS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="大圣巴巴的博客">
+<meta property="og:url" content="https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html">
+<meta property="og:site_name" content="大圣巴巴的博客">
+<meta property="og:description" content="水平垂直居中                   document.addEventListener(&quot;DOMContentLoaded&quot;,function () {             var btn_pop = document.querySelector(&quot;#btn_pop&quot;);             var pop = document.queryS">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-04T06:17:23.020Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大圣巴巴的博客">
+<meta name="twitter:description" content="水平垂直居中                   document.addEventListener(&quot;DOMContentLoaded&quot;,function () {             var btn_pop = document.querySelector(&quot;#btn_pop&quot;);             var pop = document.queryS">
+    
+        <link rel="alternate" type="application/atom+xml" title="大圣巴巴的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ds.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">大圣巴巴</h5>
+          <a href="mailto:youcanping2008@163.com" title="youcanping2008@163.com" class="mail">youcanping2008@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/youcanping" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/message"  >
+                <i class="icon icon-lg icon-comments"></i>
+                留言
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/collection"  >
+                <i class="icon icon-lg icon-thumbs-up"></i>
+                收藏
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header page-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    <article class="page-article fade" itemprop="blogPage">
+        <div class="post-content page-content" id="page-content" itemprop="pageContent">
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>水平垂直居中</title>
+    <link rel="stylesheet" href="v-h-center.css">
+    <script>
+        document.addEventListener("DOMContentLoaded",function () {
+            var btn_pop = document.querySelector("#btn_pop");
+            var pop = document.querySelector("#pop_1");
+            btn_pop.addEventListener("click",function () {
+                pop.style.display = "block";
+                // pop.querySelector(".pop-box").style.display = "inline-block";
+            });
+            var pop_overlayView = document.querySelector(".pop-overlay");
+            pop_overlayView.addEventListener("click",function () {
+                pop.style.display = "none";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button id="btn_pop">弹出</button>
+    </div>
+    <div class="pop-container" id="pop_1">
+        <div class="pop-overlay"></div>
+        <div class="pop-box transform-pop">
+            <div class="pop-content">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+        </div>
+
+        
+        <div class="card page-about-me flex-row">
+            <a href="/" class="avatar waves-effect waves-circle waves-light"><img src="/img/ds.png"></a>
+            <div class="content flex-col">
+                <p><strong>大圣巴巴</strong></p>
+                <p><em>记录生活点滴，分享前端技术，学习新的知识，共同进步成长！</em></p>
+                <p>每天记录一点点</p>
+            </div>
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html&title=大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html&title=大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=大圣巴巴的博客&url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+        
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '昵称,邮箱,链接'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "dr87fQovAE7UUJOFUWV5coSh-gzGzoHsz",
+            appKey: "Vi8BjFW3Wyezfwrecw2luC3c",
+            avatar: "mm",
+            placeholder: "欢迎留言",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+    </article>
+    
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WeChatQR.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WeChatQR.png" data-alipay="/img/AliPayQR.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>大圣巴巴 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html&title=大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html&title=大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=大圣巴巴的博客&url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/ycp-demo/v-h-center/v-h-center.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3ay27jMBAEQP//T2evCwSWuocaJwFKJ8MPmUUDJN0zr1d8fX272ufbO/z/6vfHD194eHh4x0O/HkT+qWQKrsdzTU2+HQ8PD2+P9+5rrm99fZ9kmhJYvkng4eHh/U5eOxH1Uh6w8fDw8P4WL1/o86zgegp+YN/Dw8PDC3j5rfP4NT+I59HDYtaCh4eHNz/BHh2aP/N4pb6Hh4eHd1xVnxXD2qh31qAQjRYPDw9vgZcvuMmBtZ2OjcgDDw8Pb5uXL8FJi0BbuMrDjuH2g4eHh7fGa4+8s2dmA022nNfJcPHw8PBGvFn0kOPzoc/aEW5iCDw8PLwF3uwofB46PFW7e/tZPDw8vDXerPSVNFHl78mnoGi9wsPDw1vmPbUx5Mfl8zDiZnvAw8PDW+C1f/XzU+usWWoW2rbhBR4eHt4JLzn+zsLcYcnqcrnP2w7w8PDw9nj5TdtF/CRTPdlm6o4JPDw8vANeW8qaHbVn5/okthj+Ynh4eHgjXr6gt61aGwf3+s54eHh4C7xZMelkUto75NtAhMTDw8M75iUNBMmiPyvkz+5cxCJ4eHh4j/JmbUzJMTffkWYNWNHzeHh4eAu8ZHCzpbk9jp/U627ej4eHh/coLx9oG9HOmg9Ogo+3vxseHh7eo7xZkf4kqD05KM9KcXh4eHgbvPwYXVfSDjKB/Cp+MTw8PLw1XlvcaotVSaNAO3F1TxkeHh7eAq+NBvL4dcYYhhF4eHh4j/K+yiu/df7Z/FP1q3h4eHgLvPM//DNAPh3t46O9BQ8PD6+sp7dtT8lA85NtEkkkGwMeHh7eJ3l1hhEsyk/FDW04ctM6gIeHh/dxXh5PzLafNgS5GRUeHh7eL+C11aU8mMijimLLwcPDw1vjnQQBydScl6/y6cbDw8Pb5s0am/JlPX9P216wkmfg4eHhXV3/AEMgVLkoeG6BAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '大圣巴巴的博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '大圣巴巴的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

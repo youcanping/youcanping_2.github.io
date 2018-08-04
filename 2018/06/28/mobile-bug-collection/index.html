@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>移动端问题汇总 | 大圣巴巴的博客 | 记录生活点滴，分享前端技术，学习新的知识，共同进步成长！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="移动端问题汇总">
+    <meta name="description" content="移动端:active伪类无效的解决方法解决方法 Safari Mobile 默认不使用:active 状态，除非元素上或上有一个touchstart 事件处理器。 1&amp;lt;body ontouchstart=&quot;&quot;&amp;gt; &amp;lt;!-- Hack to activate :active CSS selector on iOS browsers.--&amp;gt;  给body添加touchstart事">
+<meta name="keywords" content="移动端问题汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端问题汇总">
+<meta property="og:url" content="https://youcanping.coding.me/2018/06/28/mobile-bug-collection/index.html">
+<meta property="og:site_name" content="大圣巴巴的博客">
+<meta property="og:description" content="移动端:active伪类无效的解决方法解决方法 Safari Mobile 默认不使用:active 状态，除非元素上或上有一个touchstart 事件处理器。 1&amp;lt;body ontouchstart=&quot;&quot;&amp;gt; &amp;lt;!-- Hack to activate :active CSS selector on iOS browsers.--&amp;gt;  给body添加touchstart事">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-04T06:17:23.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端问题汇总">
+<meta name="twitter:description" content="移动端:active伪类无效的解决方法解决方法 Safari Mobile 默认不使用:active 状态，除非元素上或上有一个touchstart 事件处理器。 1&amp;lt;body ontouchstart=&quot;&quot;&amp;gt; &amp;lt;!-- Hack to activate :active CSS selector on iOS browsers.--&amp;gt;  给body添加touchstart事">
+    
+        <link rel="alternate" type="application/atom+xml" title="大圣巴巴的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ds.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">大圣巴巴</h5>
+          <a href="mailto:youcanping2008@163.com" title="youcanping2008@163.com" class="mail">youcanping2008@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/youcanping" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/message"  >
+                <i class="icon icon-lg icon-comments"></i>
+                留言
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/collection"  >
+                <i class="icon icon-lg icon-thumbs-up"></i>
+                收藏
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">移动端问题汇总</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">移动端问题汇总</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-28T14:52:30.000Z" itemprop="datePublished" class="page-time">
+  2018-06-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/问题汇总/">问题汇总</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端-active伪类无效的解决方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">移动端:active伪类无效的解决方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">解决方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#监听文档是否处于激活状态"><span class="post-toc-number">2.</span> <span class="post-toc-text">监听文档是否处于激活状态</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">解决方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#visibilityChange事件触发条件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">visibilityChange事件触发条件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考资料-1"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-mobile-bug-collection"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">移动端问题汇总</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-28 14:52:30" datetime="2018-06-28T14:52:30.000Z"  itemprop="datePublished">2018-06-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/问题汇总/">问题汇总</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="移动端-active伪类无效的解决方法"><a href="#移动端-active伪类无效的解决方法" class="headerlink" title="移动端:active伪类无效的解决方法"></a>移动端:active伪类无效的解决方法</h2><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<li><p>Safari Mobile 默认不使用:active 状态，除非元素上或<body>上有一个touchstart 事件处理器。</body></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ontouchstart</span>=<span class="string">""</span>&gt;</span> <span class="comment">&lt;!-- Hack to activate :active CSS selector on iOS browsers.--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给<code>body</code>添加<code>touchstart</code>事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">//...空函数即可&#125;);</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><blockquote>
+<ul>
+<li><a href="https://blog.csdn.net/freshlover/article/details/43735273" target="_blank" rel="noopener">移动端:active伪类无效的解决方法</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active" target="_blank" rel="noopener">MDN-web-docs :active</a></li>
+</ul>
+</blockquote>
+<h2 id="监听文档是否处于激活状态"><a href="#监听文档是否处于激活状态" class="headerlink" title="监听文档是否处于激活状态"></a>监听文档是否处于激活状态</h2><h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>使用H5新的监听文档可见状态事件<code>visibilityChange</code>判断当前页面是否处于激活状态</p>
+<h3 id="visibilityChange事件触发条件"><a href="#visibilityChange事件触发条件" class="headerlink" title="visibilityChange事件触发条件"></a>visibilityChange事件触发条件</h3><blockquote>
+<ul>
+<li><code>PC</code>端浏览器的标签页切换。</li>
+<li><code>PC</code>端浏览器最大化最小化，<code>Opera</code>例外。</li>
+<li>移动端锁屏。</li>
+<li>移动端进入后台和进入前台。</li>
+<li>移动端浏览器TAB切换。</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>方式一</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hiddenProperty = <span class="string">'hidden'</span> <span class="keyword">in</span> <span class="built_in">document</span> ? <span class="string">'hidden'</span> :</span><br><span class="line">    <span class="string">'webkitHidden'</span> <span class="keyword">in</span> <span class="built_in">document</span> ? <span class="string">'webkitHidden'</span> :</span><br><span class="line">        <span class="string">'mozHidden'</span> <span class="keyword">in</span> <span class="built_in">document</span> ? <span class="string">'mozHidden'</span> :</span><br><span class="line">            <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> visibilityChangeEvent = hiddenProperty.replace(<span class="regexp">/hidden/i</span>, <span class="string">'visibilitychange'</span>);</span><br><span class="line"><span class="keyword">var</span> onVisibilityChange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>[hiddenProperty]) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'页面非激活'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'页面激活'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.addEventListener(visibilityChangeEvent, onVisibilityChange);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式二</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置隐藏属性和改变可见属性的事件的名称</span></span><br><span class="line"><span class="keyword">var</span> hidden, visibilityChange;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">document</span>.hidden !== <span class="string">"undefined"</span>) &#123; <span class="comment">// Opera 12.10 and Firefox 18 and later support</span></span><br><span class="line">  hidden = <span class="string">"hidden"</span>;</span><br><span class="line">  visibilityChange = <span class="string">"visibilitychange"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">document</span>.msHidden !== <span class="string">"undefined"</span>) &#123;</span><br><span class="line">  hidden = <span class="string">"msHidden"</span>;</span><br><span class="line">  visibilityChange = <span class="string">"msvisibilitychange"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">document</span>.webkitHidden !== <span class="string">"undefined"</span>) &#123;</span><br><span class="line">  hidden = <span class="string">"webkitHidden"</span>;</span><br><span class="line">  visibilityChange = <span class="string">"webkitvisibilitychange"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleVisibilityChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>[hidden]) &#123;</span><br><span class="line">    <span class="comment">// 非激活状态</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//页面激活</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.addEventListener(visibilityChange, handleVisibilityChange, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h3><blockquote>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Page_Visibility_API" target="_blank" rel="noopener">MDN-web-docs Page_Visibility_API</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-04T06:17:23.016Z" itemprop="dateUpdated">2018-08-04 06:17:23</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/2018/06/28/mobile-bug-collection/" target="_blank" rel="external">https://youcanping.coding.me/2018/06/28/mobile-bug-collection/</a>
+        
+    </div>
+    <footer>
+        <a href="https://youcanping.coding.me">
+            <img src="/img/ds.png" alt="大圣巴巴">
+            大圣巴巴
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端问题汇总/">移动端问题汇总</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/&title=《移动端问题汇总》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/&title=《移动端问题汇总》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端问题汇总》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/07/08/CSS-清除浮动clearfix/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CSS-清除浮动(.clearfix)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/27/web-浏览器同源策略/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">浏览器同源策略</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '昵称,邮箱,链接'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "dr87fQovAE7UUJOFUWV5coSh-gzGzoHsz",
+            appKey: "Vi8BjFW3Wyezfwrecw2luC3c",
+            avatar: "mm",
+            placeholder: "欢迎留言",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WeChatQR.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WeChatQR.png" data-alipay="/img/AliPayQR.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>大圣巴巴 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/&title=《移动端问题汇总》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/&title=《移动端问题汇总》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端问题汇总》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/06/28/mobile-bug-collection/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQY7DIAwF0N7/0pltpWmSb0MrBR6rqs0ALwuPwX694nG8jfdv/n8+ez6f8/qvhgYGBsZjGcflmPWermdI1j17BgMDYx/G2dTXz1wvVgXk62JgYGBcT5csnD+TrIWBgYExHnBzQPUQi4GBgVE9xObhuMr76VkcAwPjgYz8suz3n79S38DAwHgU4yiOPLGrBus8yH5YBQMDY2nGyAF1VpIXHVCTgigGBsaijN6FfrWoOd6QcfMNBgbG0oxZ6VqvYNC7krt5TRgYGIsyqgtUSYVw2WJjYGDswOg9NNIKlhyJ82s+DAyMtRnJoTHKK+NAWT11RodnDAyMpRn5JqqYfBPjbAwMjLUZeQtFtTyZly17ddfTEiYGBsZyjF76lSdzeYqZ824CNAYGxnKM6oaGaqRxGE3SzaH3ioGB8ShGtWTYu1bLE8ShQI+BgbE0I0/FellnL/hWr94wMDBWZSRND/kRtDpbr2DwYX4MDIylGSPbzcuWeRDvXd5hYGDszOg1TFSv4XpB/8M3GBgYGzDyMDe0WHy2rq6CgYGxA6PXctG7yu9drt3sCgMDY1HGURwjl2tzE00MDIx9GNUwVw3B+euo/gNohmwMDIzHMr5XgOy1YjTbOzAwMDZgzDrc5pvrpX1RswUGBgZGsZ2rGmqbOSwGBgZGXJjMk7mRptUJARcDA+OBjG8UA5KyZfLr5Os2DAyMBzKqeddI0TFvtqi2o2FgYCzK+AMzZNsZhT/pjgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '大圣巴巴的博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '大圣巴巴的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JavaScript学习笔记-基础知识 | 大圣巴巴的博客 | 记录生活点滴，分享前端技术，学习新的知识，共同进步成长！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="标识符所谓标识符，就是只变量、函数、属性名的名字，或者函数的参数。标识符的组成规则：  第一个字符必须是一个字母、下划线(_)或一个美元符号($); 其他字符可以是字母、下划线、美元符号或数字。   按照惯例，ECMAScript标识符采用驼峰命名规则(Camel-Case)，一个单词字母小写其他单词首字母大写（小驼峰命名法），或全面单词首字母都大写（大驼峰命名法），构造函数建议采用大驼峰命名法。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript学习笔记-基础知识">
+<meta property="og:url" content="https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/index.html">
+<meta property="og:site_name" content="大圣巴巴的博客">
+<meta property="og:description" content="标识符所谓标识符，就是只变量、函数、属性名的名字，或者函数的参数。标识符的组成规则：  第一个字符必须是一个字母、下划线(_)或一个美元符号($); 其他字符可以是字母、下划线、美元符号或数字。   按照惯例，ECMAScript标识符采用驼峰命名规则(Camel-Case)，一个单词字母小写其他单词首字母大写（小驼峰命名法），或全面单词首字母都大写（大驼峰命名法），构造函数建议采用大驼峰命名法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-04T06:17:23.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript学习笔记-基础知识">
+<meta name="twitter:description" content="标识符所谓标识符，就是只变量、函数、属性名的名字，或者函数的参数。标识符的组成规则：  第一个字符必须是一个字母、下划线(_)或一个美元符号($); 其他字符可以是字母、下划线、美元符号或数字。   按照惯例，ECMAScript标识符采用驼峰命名规则(Camel-Case)，一个单词字母小写其他单词首字母大写（小驼峰命名法），或全面单词首字母都大写（大驼峰命名法），构造函数建议采用大驼峰命名法。">
+    
+        <link rel="alternate" type="application/atom+xml" title="大圣巴巴的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ds.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">大圣巴巴</h5>
+          <a href="mailto:youcanping2008@163.com" title="youcanping2008@163.com" class="mail">youcanping2008@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/youcanping" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/message"  >
+                <i class="icon icon-lg icon-comments"></i>
+                留言
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/collection"  >
+                <i class="icon icon-lg icon-thumbs-up"></i>
+                收藏
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript学习笔记-基础知识</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript学习笔记-基础知识</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-05-21T15:20:26.000Z" itemprop="datePublished" class="page-time">
+  2018-05-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/JavaScript学习笔记/">JavaScript学习笔记</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标识符"><span class="post-toc-number">1.</span> <span class="post-toc-text">标识符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ECMAScript5中有5种简单数据类型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ECMAScript5中有5种简单数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ECMAScript复杂数据类型"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">ECMAScript复杂数据类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型检查"><span class="post-toc-number">3.</span> <span class="post-toc-text">类型检查</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#typeof和constructor判断基本数据类型"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">typeof和constructor判断基本数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用instanceof操作符判断复杂数据类型"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">使用instanceof操作符判断复杂数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#语法"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">示例</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Undefined类型"><span class="post-toc-number">4.</span> <span class="post-toc-text">Undefined类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Null类型"><span class="post-toc-number">5.</span> <span class="post-toc-text">Null类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Booloean类型"><span class="post-toc-number">6.</span> <span class="post-toc-text">Booloean类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转换规则"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">转换规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#布尔操作符转换规则"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">布尔操作符转换规则</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Number类型"><span class="post-toc-number">7.</span> <span class="post-toc-text">Number类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数值范围"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">数值范围</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数值转换"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">数值转换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NaN"><span class="post-toc-number">8.</span> <span class="post-toc-text">NaN</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-JavaScript学习笔记-基础知识"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript学习笔记-基础知识</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-05-21 15:20:26" datetime="2018-05-21T15:20:26.000Z"  itemprop="datePublished">2018-05-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/JavaScript学习笔记/">JavaScript学习笔记</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>所谓<strong>标识符</strong>，就是只变量、函数、属性名的名字，或者函数的参数。<br>标识符的组成规则：</p>
+<ul>
+<li>第一个字符必须是一个字母、下划线(_)或一个美元符号($);</li>
+<li>其他字符可以是字母、下划线、美元符号或数字。</li>
+</ul>
+<blockquote>
+<p>按照惯例，ECMAScript标识符采用驼峰命名规则(Camel-Case)，一个单词字母小写其他单词首字母大写（小驼峰命名法），或全面单词首字母都大写（大驼峰命名法），构造函数建议采用大驼峰命名法。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> abc123 = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> _temp = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> $list = [];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">name, age</span>)</span>&#123;&#125;;</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="ECMAScript5中有5种简单数据类型"><a href="#ECMAScript5中有5种简单数据类型" class="headerlink" title="ECMAScript5中有5种简单数据类型"></a>ECMAScript5中有5种简单数据类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">undefined</td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">null</td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">整数和小数</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">‘abc’</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ECMAScript复杂数据类型"><a href="#ECMAScript复杂数据类型" class="headerlink" title="ECMAScript复杂数据类型"></a>ECMAScript复杂数据类型</h3><p><code>Object</code>，是由一组<strong>无序</strong>的键值对组成。</p>
+<h2 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h2><h3 id="typeof和constructor判断基本数据类型"><a href="#typeof和constructor判断基本数据类型" class="headerlink" title="typeof和constructor判断基本数据类型"></a>typeof和constructor判断基本数据类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">variable</th>
+<th style="text-align:left">typeof variable</th>
+<th style="text-align:left">variable.constructor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>{an: &quot;object&quot;}</code></td>
+<td style="text-align:left"><code>&quot;object&quot;</code></td>
+<td style="text-align:left"><code>Object</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[&quot;an&quot;, &quot;array&quot;]</code></td>
+<td style="text-align:left"><code>&quot;object&quot;</code></td>
+<td style="text-align:left"><code>Array</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>function(){}</code></td>
+<td style="text-align:left"><code>&quot;function&quot;</code></td>
+<td style="text-align:left"><code>Function</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&quot;a string&quot;</code></td>
+<td style="text-align:left"><code>&quot;string&quot;</code></td>
+<td style="text-align:left"><code>String</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>89</code></td>
+<td style="text-align:left"><code>&quot;number&quot;</code></td>
+<td style="text-align:left"><code>Number</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left"><code>&quot;boolean&quot;</code></td>
+<td style="text-align:left"><code>Boolean</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>new User()</code></td>
+<td style="text-align:left"><code>&quot;object&quot;</code></td>
+<td style="text-align:left"><code>User</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>null</code></td>
+<td style="text-align:left"><code>&quot;object&quot;</code></td>
+<td style="text-align:left"><code>报错</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>undefined</code></td>
+<td style="text-align:left"><code>&quot;undefined&quot;</code></td>
+<td style="text-align:left"><code>报错</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>对未初始化，未定义的变量使用<code>typeof</code>操作费返回<code>undefined</code>，可以利用这以特性安全的判断变量是否定义，否则使用未定义的变量会导致页面报错。</li>
+<li><code>null</code>被认为是空对象的引用，使用<code>typeof</code>操作符返回<code>object</code>。</li>
+<li>数组也是对象，<code>typeof</code>返回<code>object</code>。</li>
+<li>当变量是<code>null</code>或<code>undefined</code>时，调用<code>constructor</code>会报错。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> type =  <span class="keyword">typeof</span> <span class="number">1</span>; <span class="comment">// "number"</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用instanceof操作符判断复杂数据类型"><a href="#使用instanceof操作符判断复杂数据类型" class="headerlink" title="使用instanceof操作符判断复杂数据类型"></a>使用instanceof操作符判断复杂数据类型</h3><p><code>instanceof</code> 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="noopener">MDN instanceof</a></li>
+</ul>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>object instanceof constructor</p>
+<ul>
+<li>object 要检测的对象</li>
+<li>constructor 某个构造函数</li>
+</ul>
+</blockquote>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">C</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> C()&#123;&#125;;</span><br><span class="line">o <span class="keyword">instanceof</span> C <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Undefined类型"><a href="#Undefined类型" class="headerlink" title="Undefined类型"></a>Undefined类型</h2><ul>
+<li><code>Undefined</code>只有一个值<code>undefined</code>，未初始化的变量默认值就是<code>undefined</code>;</li>
+<li>不需要显示声明一个变量的初始值为<code>undefined</code>;</li>
+<li>使用<code>typeof</code>操作一个未定义的变量返回<code>undefined</code>;</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">if</span>(a !== <span class="literal">undefined</span>)&#123;</span><br><span class="line">    <span class="comment">// todo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h2><ul>
+<li><code>Null</code>类型只有一个值<code>null</code>，标识空对象的指针。</li>
+<li>对定义的变量<strong>将来</strong>用于保存对象要显示初始化赋值<code>null</code>，有利于区分<code>null</code>和<code>undefined</code>;</li>
+<li><code>undefined</code>值是派生自<code>null</code>，<code>==</code>测试返回<code>true</code>;</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">if</span>(obj !== <span class="literal">null</span>)&#123;</span><br><span class="line">     <span class="comment">// todo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Booloean类型"><a href="#Booloean类型" class="headerlink" title="Booloean类型"></a>Booloean类型</h2><h3 id="转换规则"><a href="#转换规则" class="headerlink" title="转换规则"></a>转换规则</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">true</th>
+<th style="text-align:left">false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">非空字符串</td>
+<td style="text-align:left"><code>&quot;&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">非0数字</td>
+<td style="text-align:left"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">非空指针对象</td>
+<td style="text-align:left"><code>null</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">不适用n/a</td>
+<td style="text-align:left"><code>undefined</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>总结：<code>&quot;&quot;</code>、<code>0</code>、<code>undefined</code>、<code>null</code> 都为<code>false</code>，反之为<code>true</code>;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>(<span class="string">"abc"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">""</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="keyword">void</span> <span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(&#123;&#125;); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="布尔操作符转换规则"><a href="#布尔操作符转换规则" class="headerlink" title="布尔操作符转换规则"></a>布尔操作符转换规则</h3><blockquote>
+<p>对<code>非Boolean类型</code>的值进行2次取反得到<code>boolean</code>值，第一个操作符对操作数进行布尔值转换然后取反，第二个操作数得到该值的真正<code>boolean</code>值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!!<span class="string">'A'</span>; <span class="comment">// true</span></span><br><span class="line">!!<span class="string">''</span>; <span class="comment">// false</span></span><br><span class="line">!!<span class="number">0</span>; <span class="comment">// false</span></span><br><span class="line">!!(<span class="keyword">void</span> <span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line">!!&#123;&#125;; <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h2><h3 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h3><ul>
+<li>正无穷大 <code>Number.POSITIVE_INFINITY</code>，<code>Infinity</code>；</li>
+<li>负无穷大 <code>Number.NEGATIVE_INFINITY</code>，<code>-Infinity</code>；</li>
+<li>最大值 <code>Number.MAX_VALUE</code>；</li>
+<li>最小值 <code>Number.MIN_VALUE</code>；</li>
+<li>判断数值是否在有效范围 <code>isFinite()</code>；</li>
+</ul>
+<h3 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h3><ul>
+<li><code>Number()</code>能转换任何类型，<code>parseInt()</code>，<code>parseFloat()</code>只能转换字符串。</li>
+<li><code>Number</code>转换字符串，如果字符串包含无效数值返回<code>NaN</code>;</li>
+<li><code>Number</code>转换的值是<code>undefined</code>，返回<code>NaN</code>;</li>
+<li><code>Number</code>转换的是对象，先找<code>valueOf()</code>方法取值，没有再找<code>toString()</code>方法取值；</li>
+</ul>
+<blockquote>
+<ul>
+<li><strong><code>1/0</code>不会报错，返回<code>Infinity</code></strong>；</li>
+<li><strong><code>0/0</code>不会报错，返回<code>NaN</code></strong>；</li>
+<li><strong>一元加操作符<code>+</code>，和<code>Number</code>函数相同</strong>;</li>
+<li><strong><code>Number(&#39;123A&#39;)</code>返回<code>NaN</code>，而<code>parseInt(&#39;123A&#39;)</code>返回<code>123</code></strong>;</li>
+<li>无论什么时候使用<code>parseInt()</code>都需要制定第二个参数基数，表明转换十进制如<code>parseInt(&#39;076&#39;, 10)</code>，否则会按照八进制处理；</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span> - <span class="string">'A'</span>; <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Number</span>(<span class="string">'A'</span>); <span class="comment">//NaN</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    valueOf: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'valueOf'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'A'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    toString: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'toString'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'1'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Number</span>(obj); <span class="comment">// =&gt; NaN ,再没有valueOf方法的前提下才会调用toString方法。</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"123abc"</span>); <span class="comment">// =&gt; 123</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'123abc'</span>); <span class="comment">// =&gt; NaN</span></span><br></pre></td></tr></table></figure>
+<h2 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h2><blockquote>
+<p>NaN （not a number） 即非数值</p>
+</blockquote>
+<ul>
+<li><code>NaN</code>与任何值不相等，包括自己；</li>
+<li><code>NaN</code>参与的运算返回的都是<code>NaN</code>;</li>
+<li><code>isNaN()</code>函数用于判断值是否是有效数字，引用类型则调用先<code>valueOf</code>方法取值，没有则调用<code>toString()</code>取值，同<code>Number()</code>。</li>
+<li><code>NaN</code>参与的比较返回的都是<code>false</code>;</li>
+<li><strong><code>0/0</code>不会报错，返回<code>NaN</code></strong>;</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>(&#123;&#125;); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">isNaN</span>(&#123;<span class="attr">valueOf</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">123</span>&#125;&#125;); <span class="comment">// false;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-04T06:17:23.016Z" itemprop="dateUpdated">2018-08-04 06:17:23</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/2018/05/21/JavaScript学习笔记-基础知识/" target="_blank" rel="external">https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/</a>
+        
+    </div>
+    <footer>
+        <a href="https://youcanping.coding.me">
+            <img src="/img/ds.png" alt="大圣巴巴">
+            大圣巴巴
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/&title=《JavaScript学习笔记-基础知识》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/&title=《JavaScript学习笔记-基础知识》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript学习笔记-基础知识》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/06/26/JavaScript-IP/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JavaScript 获取IP地址</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/13/iFrame使用技巧汇总/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">iFrame使用技巧汇总</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '昵称,邮箱,链接'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "dr87fQovAE7UUJOFUWV5coSh-gzGzoHsz",
+            appKey: "Vi8BjFW3Wyezfwrecw2luC3c",
+            avatar: "mm",
+            placeholder: "欢迎留言",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WeChatQR.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WeChatQR.png" data-alipay="/img/AliPayQR.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>大圣巴巴 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/&title=《JavaScript学习笔记-基础知识》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/&title=《JavaScript学习笔记-基础知识》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript学习笔记-基础知识》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/05/21/JavaScript学习笔记-基础知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrElEQVR42u3aQW6DQAwF0Nz/0um2UgV82+MolR4r1KgwjwUevv16xcf713H/69/j/jpX18zvfuDAw8PDGyz9anE5IF/iPf7YevDw8PDWeFcLujqvloF5AUjKCR4eHt7383ob37zA3BcGPDw8vP/Iu2f3zhMSHh4e3jfw8kvnL+75Q8mvdiBrwcPDw5vmroUi8fnzlf4eHh4e3rirXm0+JYtIYt9qcHy5Hjw8PLwFXm/sKWdXQ4r50BUeHh7eNi9v+ScNsF6rbFIMHooKHh4e3hpvPvDUA+cv+iTMffWeNB4eHl6LtxE35FvhvGyUh7fw8PDwlnnJLavhbB7ULnbt8PDw8NZ4SSiQb5R7MW51A12eJsPDw8M7xKsWg0m3LY+Mqw0zPDw8vE/yeo2uaqDQa2iNBgvw8PDwFni9SKI6epVvgnujAw9lAw8PD2+BN9lAV1/c1ZJwargBDw8P7xSvNwI1Dxd6W/NoXKA3g4CHh4fX4k3wZ0ONfOCgOXSFh4eHN+BVX7W9G+dloNece7gvHh4e3gLv7ChVdetcXWgvIMbDw8M7xdsbGuhtu1+DI9pM4+Hh4Y15vWZ/3sTKA45kICAvFYUvBjw8PLwirxcf5DfrPb582x2VBDw8PLyjvPyzvzcW0IuDexvxcpcPDw8P7xCvukXOo4Qkeuixo5QCDw8Pb4GXRAbV1lc1vMhD3kKJwsPDw1vmJVvkKjsvSL2S8/BfeHh4eEd57+KRvG+TK1T/nv+Kh4eHt82rvmqrjyAPW/OHcgCDh4eHN+ZVLz1ZdC+8qBYGPDw8vM/wqi2rXrw7Hzsot9bw8PDwvoBXHSPoNdJ6eDw8PLxv5k0Wl2/T51EIHh4e3h4vDwJ6G+vkUebDB3lIgYeHh7fBm3/wz5c1WcOx/h4eHh7e871+ACCd+T7/MlnQAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '大圣巴巴的博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '大圣巴巴的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

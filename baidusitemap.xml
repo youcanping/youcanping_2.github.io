@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+    
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/06/26/JavaScript-IP/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 获取IP地址</title>
+        <pubTime>2018-06-26T15:04:44.000Z</pubTime>
+        
+        <tag>JavaScript 获取IP地址</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://youcanping.coding.me/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/05/21/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript学习笔记-基础知识</title>
+        <pubTime>2018-05-21T15:20:26.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://youcanping.coding.me/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="JavaScript学习笔记" url="https://youcanping.coding.me/categories/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/03/01/SSL-ERROR-SYSCALL-github-com-443/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>SSL_ERROR_SYSCALL in connection to github.com:443</title>
+        <pubTime>2018-03-01T16:43:39.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="GIT" url="https://youcanping.coding.me/categories/GIT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2017/12/17/hello-world/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-12-17T20:24:15.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="node" url="https://youcanping.coding.me/categories/node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/05/13/iFrame%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>iFrame使用技巧汇总</title>
+        <pubTime>2018-05-13T22:01:51.000Z</pubTime>
+        
+        <tag>iframe</tag>
+         
+        <tag>iOS iframe width</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTML5" url="https://youcanping.coding.me/categories/HTML5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2017/12/28/iframe-scroll-in-ios/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>解决iframe嵌入页面在iOS不能滚动问题</title>
+        <pubTime>2017-12-28T15:06:05.000Z</pubTime>
+        
+        <tag>iframe</tag>
+         
+        <tag>HTML</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTML5" url="https://youcanping.coding.me/categories/HTML5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/05/06/input%E4%BA%8B%E4%BB%B6%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>input事件中文输入优化</title>
+        <pubTime>2018-05-06T23:57:07.000Z</pubTime>
+        
+        <tag>compostionstart</tag>
+         
+        <tag>compostionend</tag>
+         
+        <tag>input</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTML5" url="https://youcanping.coding.me/categories/HTML5/"/>
+          
+             
+              <breadCrumb title="JavaScript" url="https://youcanping.coding.me/categories/HTML5/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2017/12/20/js%E5%8F%98%E9%87%8F%E5%AE%89%E5%85%A8%E6%A0%A1%E9%AA%8C/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>js变量空值校验</title>
+        <pubTime>2017-12-20T16:53:16.000Z</pubTime>
+        
+        <tag>js变量校验</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://youcanping.coding.me/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/06/28/mobile-bug-collection/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>移动端问题汇总</title>
+        <pubTime>2018-06-28T14:52:30.000Z</pubTime>
+        
+        <tag>移动端问题汇总</tag>
+         
+         
+           
+             
+              <breadCrumb title="问题汇总" url="https://youcanping.coding.me/categories/%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2017/12/17/node-gyp-error/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>node-gyp error</title>
+        <pubTime>2017-12-17T20:24:15.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="node" url="https://youcanping.coding.me/categories/node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/03/11/CSS%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>CSS居中布局</title>
+        <pubTime>2018-03-11T20:47:49.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="https://youcanping.coding.me/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/03/30/npm-install-package/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>NPM安装与卸载包</title>
+        <pubTime>2018-03-30T15:33:45.000Z</pubTime>
+        
+        <tag>npm包管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="NPM" url="https://youcanping.coding.me/categories/NPM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2017/12/20/ssh-Permission-denied/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>ssh Permission denied </title>
+        <pubTime>2017-12-20T14:27:41.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="node" url="https://youcanping.coding.me/categories/node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/06/27/web-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>浏览器同源策略</title>
+        <pubTime>2018-06-27T09:57:36.000Z</pubTime>
+        
+        <tag>同源策略</tag>
+         
+        <tag>iframe跨域问题</tag>
+         
+        <tag>X-Frame-Options</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="https://youcanping.coding.me/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>webpack使用jQuery的解决方式</title>
+        <pubTime>2018-01-15T14:32:34.000Z</pubTime>
+        
+        <tag>webpack</tag>
+         
+        <tag>jQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="webpack" url="https://youcanping.coding.me/categories/webpack/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/07/08/CSS-%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8clearfix/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>CSS-清除浮动(.clearfix)</title>
+        <pubTime>2018-07-08T23:40:03.000Z</pubTime>
+        
+        <tag>clearfix</tag>
+         
+        <tag>清除浮动</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="https://youcanping.coding.me/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/01/18/JS-Calculate-Bug/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>JS-Calculate-Bug</title>
+        <pubTime>2018-01-18T11:11:23.000Z</pubTime>
+        
+        <tag>js浮点数计算</tag>
+         
+        <tag>js小数计算</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://youcanping.coding.me/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://youcanping.coding.me/2018/03/30/npm-change-registry/</loc>
+    <lastmod>2018-08-04T06:17:23.016Z</lastmod>
+    <data>
+        <display>
+        <title>如何优雅的切换NPM源</title>
+        <pubTime>2018-03-30T13:59:57.000Z</pubTime>
+        
+        <tag>npm切换源</tag>
+         
+         
+           
+             
+              <breadCrumb title="NPM" url="https://youcanping.coding.me/categories/NPM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>

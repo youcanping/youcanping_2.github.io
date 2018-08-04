@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>iFrame使用技巧汇总 | 大圣巴巴的博客 | 记录生活点滴，分享前端技术，学习新的知识，共同进步成长！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="iframe,iOS iframe width">
+    <meta name="description" content="该博文主要是记录在开发过程中使用iframe时遇到问题，收集的解决方法汇总。 iframe移动设备垂直滚动问题移动开发过程中使用iFrame时，出现在iOS10以上系统出现滚动异常问题，该问题已经有国外大拿提供了解决方案，请看我的另一篇博文《解决iframe嵌入页面在iOS不能滚动问题》 禁止iframe产生历史记录方式一url链接变化，不通过改变iframe的src属性，而是每次都创建一个新的i">
+<meta name="keywords" content="iframe,iOS iframe width">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iFrame使用技巧汇总">
+<meta property="og:url" content="https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/index.html">
+<meta property="og:site_name" content="大圣巴巴的博客">
+<meta property="og:description" content="该博文主要是记录在开发过程中使用iframe时遇到问题，收集的解决方法汇总。 iframe移动设备垂直滚动问题移动开发过程中使用iFrame时，出现在iOS10以上系统出现滚动异常问题，该问题已经有国外大拿提供了解决方案，请看我的另一篇博文《解决iframe嵌入页面在iOS不能滚动问题》 禁止iframe产生历史记录方式一url链接变化，不通过改变iframe的src属性，而是每次都创建一个新的i">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://our9i4zgx.bkt.clouddn.com/QQ20180514-222410.gif">
+<meta property="og:image" content="http://our9i4zgx.bkt.clouddn.com/QQ20180514-223503@2x.png">
+<meta property="og:updated_time" content="2018-08-04T06:17:23.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iFrame使用技巧汇总">
+<meta name="twitter:description" content="该博文主要是记录在开发过程中使用iframe时遇到问题，收集的解决方法汇总。 iframe移动设备垂直滚动问题移动开发过程中使用iFrame时，出现在iOS10以上系统出现滚动异常问题，该问题已经有国外大拿提供了解决方案，请看我的另一篇博文《解决iframe嵌入页面在iOS不能滚动问题》 禁止iframe产生历史记录方式一url链接变化，不通过改变iframe的src属性，而是每次都创建一个新的i">
+<meta name="twitter:image" content="http://our9i4zgx.bkt.clouddn.com/QQ20180514-222410.gif">
+    
+        <link rel="alternate" type="application/atom+xml" title="大圣巴巴的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ds.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">大圣巴巴</h5>
+          <a href="mailto:youcanping2008@163.com" title="youcanping2008@163.com" class="mail">youcanping2008@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/youcanping" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/message"  >
+                <i class="icon icon-lg icon-comments"></i>
+                留言
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/collection"  >
+                <i class="icon icon-lg icon-thumbs-up"></i>
+                收藏
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">iFrame使用技巧汇总</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">iFrame使用技巧汇总</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-05-13T22:01:51.000Z" itemprop="datePublished" class="page-time">
+  2018-05-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/HTML5/">HTML5</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iframe移动设备垂直滚动问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">iframe移动设备垂直滚动问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#禁止iframe产生历史记录"><span class="post-toc-number">2.</span> <span class="post-toc-text">禁止iframe产生历史记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方式一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方式一</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方式二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方式二</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iframe页面使用viewport进行页面缩放问题"><span class="post-toc-number">3.</span> <span class="post-toc-text">iframe页面使用viewport进行页面缩放问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">解决方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iframe在iOS部分机型宽度问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">iframe在iOS部分机型宽度问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题描述"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">问题描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解决方式"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">解决方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动端iframe终极方案"><span class="post-toc-number">5.</span> <span class="post-toc-text">移动端iframe终极方案</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-iFrame使用技巧汇总"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">iFrame使用技巧汇总</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-05-13 22:01:51" datetime="2018-05-13T22:01:51.000Z"  itemprop="datePublished">2018-05-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/HTML5/">HTML5</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>该博文主要是记录在开发过程中使用<code>iframe</code>时遇到问题，收集的解决方法汇总。</p>
+<h3 id="iframe移动设备垂直滚动问题"><a href="#iframe移动设备垂直滚动问题" class="headerlink" title="iframe移动设备垂直滚动问题"></a><code>iframe</code>移动设备垂直滚动问题</h3><p>移动开发过程中使用<code>iFrame</code>时，出现在<code>iOS10</code>以上系统出现滚动异常问题，该问题已经有国外大拿提供了解决方案，请看我的另一篇博文<a href="https://youcanping.cn/2017/12/28/iframe-scroll-in-ios/" target="_blank" rel="noopener">《解决iframe嵌入页面在iOS不能滚动问题》</a></p>
+<h3 id="禁止iframe产生历史记录"><a href="#禁止iframe产生历史记录" class="headerlink" title="禁止iframe产生历史记录"></a>禁止<code>iframe</code>产生历史记录</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p><code>url</code>链接变化，不通过改变<code>iframe</code>的<code>src</code>属性，而是每次都创建一个新的<code>iframe</code>指向新的<code>url</code>;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ifr =  <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line"> ifr.src = <span class="string">'https://www.jd.com'</span>;</span><br><span class="line"> <span class="built_in">document</span>.body.appendChild(ifr);</span><br></pre></td></tr></table></figure></p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>通过操作<code>iFrame</code>的<code>location</code>来改变<code>iFrame</code>指向的<code>url</code>;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ifr = <span class="built_in">document</span>.getElementById(<span class="string">'ifr'</span>);</span><br><span class="line">ifr.contentWindow.location.replace(<span class="string">'https://www.jd.com'</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="iframe页面使用viewport进行页面缩放问题"><a href="#iframe页面使用viewport进行页面缩放问题" class="headerlink" title="iframe页面使用viewport进行页面缩放问题"></a><code>iframe</code>页面使用<code>viewport</code>进行页面缩放问题</h3><p>在移动开发过程中，嵌入的三方页面，使用<a href="http://www.aliued.com/?p=3166" target="_blank" rel="noopener">高清屏页面渲染方案</a>，这时就会出现子页面会超出页面容器放大了，出现该问题，是因为父子容器设置的缩放比不一致导致的。</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><ul>
+<li>父子容器设置的<code>viewport</code>保持一致即可。</li>
+<li>父容器不设置<code>viewport</code>，就不出现父子容器<code>viewport</code>冲突问题。</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><ul>
+<li>父容器<code>viewport</code>设置</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>iframe</code>子页面使用高清屏解决方案，进行页面缩放，如<code>iPhone5</code>;</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=640,initial-scale=0.5,maximum-scale=0.5, minimum-scale=0.5,user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="iframe在iOS部分机型宽度问题"><a href="#iframe在iOS部分机型宽度问题" class="headerlink" title="iframe在iOS部分机型宽度问题"></a><code>iframe</code>在<code>iOS</code>部分机型宽度问题</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p><code>iframe</code>嵌入的页面有横向滚动模块，使用了<code>overflow-x: auto;</code>样式，这个时候嵌入页面的宽度会撑大页面，导致<code>iframe</code>出现了横向滚动。<br><img src="http://our9i4zgx.bkt.clouddn.com/QQ20180514-222410.gif" style="width:320px;"></p>
+<h4 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"overflow: auto;-webkit-overflow-scrolling:touch;width:100%;height:100%;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://h5.m.taopiaopiao.com"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">height</span>=<span class="string">"100%"</span> <span class="attr">scrolling</span>=<span class="string">'no'</span> <span class="attr">style</span>=<span class="string">"width: 1px; min-width: 100%; *width: 100%;"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="移动端iframe终极方案"><a href="#移动端iframe终极方案" class="headerlink" title="移动端iframe终极方案"></a>移动端<code>iframe</code>终极方案</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.iframe-container</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: auto;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;</span><br><span class="line">    <span class="attribute">-webkit-overflow-scrolling</span>:touch;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.iframe-container</span> <span class="selector-tag">iframe</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">    *width: 100%;</span><br><span class="line">    <span class="selector-tag">min-width</span>: 100%;</span><br><span class="line">    <span class="comment">/*width: 100%;*/</span></span><br><span class="line">    <span class="comment">/*height: 100%;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--height="100%"要写在行内，写在class中不生效--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://h5.m.taopiaopiao.com"</span> <span class="attr">scrolling</span>=<span class="string">'no'</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">height</span>=<span class="string">"100%"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://our9i4zgx.bkt.clouddn.com/QQ20180514-223503@2x.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-04T06:17:23.016Z" itemprop="dateUpdated">2018-08-04 06:17:23</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/2018/05/13/iFrame使用技巧汇总/" target="_blank" rel="external">https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/</a>
+        
+    </div>
+    <footer>
+        <a href="https://youcanping.coding.me">
+            <img src="/img/ds.png" alt="大圣巴巴">
+            大圣巴巴
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-iframe-width/">iOS iframe width</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iframe/">iframe</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/&title=《iFrame使用技巧汇总》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/&title=《iFrame使用技巧汇总》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《iFrame使用技巧汇总》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/05/21/JavaScript学习笔记-基础知识/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JavaScript学习笔记-基础知识</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/06/input事件优化/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">input事件中文输入优化</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '昵称,邮箱,链接'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "dr87fQovAE7UUJOFUWV5coSh-gzGzoHsz",
+            appKey: "Vi8BjFW3Wyezfwrecw2luC3c",
+            avatar: "mm",
+            placeholder: "欢迎留言",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WeChatQR.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WeChatQR.png" data-alipay="/img/AliPayQR.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>大圣巴巴 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/&title=《iFrame使用技巧汇总》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/&title=《iFrame使用技巧汇总》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《iFrame使用技巧汇总》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/05/13/iFrame使用技巧汇总/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACoklEQVR42u3aQU5DMQwE0N7/0nAA9GHGTqBIryuE2jQvi2934tcrfn0Er6f3f/3/0/rfr/D02QMvPDw8vKNbf3pPu+mn1do95O/Hw8PDu83LN5d8WXIo+UEk+3n8Px4eHt4b8E4VjBaPh4eH99957bZmheTPCgMeHh5ewMuXbpvdHNYWhsNZCx4eHl7My2+R3ufvK/d7eHh4eIcGAvLWNhkj2K9c7BYPDw/vAi9/4CZB7SywyEvRcJ94eHh4R3l5gNsGB/vO9kBQgoeHh3eZt7/Cb+Pa/EHftubD2oKHh4d39G6oHZ/KA4t8dGA/vIWHh4e35+WjS2cj3ev3dXh4eHiXeW0ckJeE2fBB8o3RHvDw8PCu8WaNddun74Pa/PhebeXBw8PDi3lte52UkLw1n317G5fg4eHh3ePto4q28W2Dj/1YAx4eHt6e1wYQ7cBBG/vmIwIREg8PD+8ar21eZ4UkLwan2nQ8PDy8G7x9RNsOUc2i3tUvBjw8PLyjvKQ9bR/KefLRMuoihIeHh3eZ1259g2wHuWafxcPDw7vBmzGSsLUdPqgv/vMyg4eHh3eNN4t3Z8Om+dHkF3I/FAY8PDy8o7zNI7gNcDdXa8ma+wKDh4eHl/Da6HYTy54KOOq6h4eHh/crvHY0KrnUzzH5MEGdteDh4eEd5bWxQt7ynhrkGv4CwMPDw7vAO/Wgn12G3QhH8PDw8G7wZldT++GANvydHRweHh7eDd6m7W4Xbdv09lAO3Onh4eHhxby2GLSNdR655k18UTbw8PDwrvHqDCOuOe3BtSFFVBjw8PDw/pS3KRuzIap2b3h4eHj/hbcf3sqj4WIcAQ8PD+8abzM4tW+Rkwu2tmDg4eHh3ePNfvDPHvdt69xewh2Y28LDw8P7jvcJAUNUuTeRsyAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '大圣巴巴的博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '大圣巴巴的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

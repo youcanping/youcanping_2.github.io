@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>webpack使用jQuery的解决方式 | 大圣巴巴的博客 | 记录生活点滴，分享前端技术，学习新的知识，共同进步成长！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="webpack,jQuery">
+    <meta name="description" content="webpack引入jquery报错jQuery作为老牌的web前端利器已经好多年，虽然有很多人说jQuery性能低等，出现了很多替代品，但不可否认，对开发轻量级别的应用来说还是很好用，jQuery插件丰富，还是很令人割舍不下的。最近项目引入了webpack打包工具，由于用到了jQuery和jQuery的一些插件，如果jquery.js用webpack构建，插件会因为找不到而报错。  1234567">
+<meta name="keywords" content="webpack,jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack使用jQuery的解决方式">
+<meta property="og:url" content="https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/index.html">
+<meta property="og:site_name" content="大圣巴巴的博客">
+<meta property="og:description" content="webpack引入jquery报错jQuery作为老牌的web前端利器已经好多年，虽然有很多人说jQuery性能低等，出现了很多替代品，但不可否认，对开发轻量级别的应用来说还是很好用，jQuery插件丰富，还是很令人割舍不下的。最近项目引入了webpack打包工具，由于用到了jQuery和jQuery的一些插件，如果jquery.js用webpack构建，插件会因为找不到而报错。  1234567">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-04T06:17:23.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack使用jQuery的解决方式">
+<meta name="twitter:description" content="webpack引入jquery报错jQuery作为老牌的web前端利器已经好多年，虽然有很多人说jQuery性能低等，出现了很多替代品，但不可否认，对开发轻量级别的应用来说还是很好用，jQuery插件丰富，还是很令人割舍不下的。最近项目引入了webpack打包工具，由于用到了jQuery和jQuery的一些插件，如果jquery.js用webpack构建，插件会因为找不到而报错。  1234567">
+    
+        <link rel="alternate" type="application/atom+xml" title="大圣巴巴的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ds.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">大圣巴巴</h5>
+          <a href="mailto:youcanping2008@163.com" title="youcanping2008@163.com" class="mail">youcanping2008@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/youcanping" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/message"  >
+                <i class="icon icon-lg icon-comments"></i>
+                留言
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/collection"  >
+                <i class="icon icon-lg icon-thumbs-up"></i>
+                收藏
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">webpack使用jQuery的解决方式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">webpack使用jQuery的解决方式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-15T14:32:34.000Z" itemprop="datePublished" class="page-time">
+  2018-01-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#webpack引入jquery报错"><span class="post-toc-number">1.</span> <span class="post-toc-text">webpack引入jquery报错</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#我的解决方式"><span class="post-toc-number">2.</span> <span class="post-toc-text">我的解决方式</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-webpack-externals-jQuery"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">webpack使用jQuery的解决方式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-15 14:32:34" datetime="2018-01-15T14:32:34.000Z"  itemprop="datePublished">2018-01-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="webpack引入jquery报错"><a href="#webpack引入jquery报错" class="headerlink" title="webpack引入jquery报错"></a>webpack引入jquery报错</h2><p>jQuery作为老牌的web前端利器已经好多年，虽然有很多人说jQuery性能低等，出现了很多替代品，但不可否认，对开发轻量级别的应用来说还是很好用，jQuery插件丰富，还是很令人割舍不下的。<br>最近项目引入了webpack打包工具，由于用到了jQuery和jQuery的一些插件，如果jquery.js用webpack构建，插件会因为找不到而报错。 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ERROR <span class="keyword">in</span> ./src/pages/common/support/js/jquery.mobile-1.4.5.js</span><br><span class="line">Module not found: Error: Can<span class="string">'t resolve '</span>jquery<span class="string">' in '</span>C:\Users\Administrator\Desktop\web_online\src\pages\common\support\js<span class="string">'</span></span><br><span class="line"><span class="string"> @ ./src/pages/common/support/js/jquery.mobile-1.4.5.js 18:2-21:4</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">ERROR in ./src/pages/common/support/js/jquery.touchSwipe.js</span></span><br><span class="line"><span class="string">Module not found: Error: Can'</span>t resolve <span class="string">'jquery'</span> <span class="keyword">in</span> <span class="string">'C:\Users\Administrator\Desktop\web_online\src\pages\common\support\js'</span></span><br><span class="line"> @ ./src/pages/common/support/js/jquery.touchSwipe.js 154:4-31 157:12-29</span><br></pre></td></tr></table></figure>
+<h2 id="我的解决方式"><a href="#我的解决方式" class="headerlink" title="我的解决方式"></a>我的解决方式</h2><ol>
+<li>HTML页面直接引入jQuery,考虑jQuery这种库不会经常改的，页面缓存也无所谓，缓存更好，用到的三方库也用HTML引入的方式。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../common/support/js/jquery-1.8.2.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../common/support/js/jquery.mobile-1.4.5.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用CopyWebpackPlugin插件,把第三方支持库直接拷贝到<code>dist/</code>目录下，绕过webpack打包构建，直接复制的目标文件夹下，注意jQuery在<code>src/</code>和<code>dist/</code>下的目录结构保持一致。</li>
+<li>在webpack.config.js中进行配置externals，告诉webpack下jquery不需要打包了，不然会报错。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">externals:&#123;</span><br><span class="line">   jquery:<span class="string">"window.$"</span>,</span><br><span class="line">   $:<span class="string">"window.$"</span></span><br><span class="line">&#125;,</span><br><span class="line">plugins:[</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-04T06:17:23.016Z" itemprop="dateUpdated">2018-08-04 06:17:23</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/2018/01/15/webpack-externals-jQuery/" target="_blank" rel="external">https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/</a>
+        
+    </div>
+    <footer>
+        <a href="https://youcanping.coding.me">
+            <img src="/img/ds.png" alt="大圣巴巴">
+            大圣巴巴
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/&title=《webpack使用jQuery的解决方式》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/&title=《webpack使用jQuery的解决方式》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack使用jQuery的解决方式》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/01/18/JS-Calculate-Bug/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JS-Calculate-Bug</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/28/iframe-scroll-in-ios/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">解决iframe嵌入页面在iOS不能滚动问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '昵称,邮箱,链接'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "dr87fQovAE7UUJOFUWV5coSh-gzGzoHsz",
+            appKey: "Vi8BjFW3Wyezfwrecw2luC3c",
+            avatar: "mm",
+            placeholder: "欢迎留言",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WeChatQR.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WeChatQR.png" data-alipay="/img/AliPayQR.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>大圣巴巴 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/&title=《webpack使用jQuery的解决方式》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/&title=《webpack使用jQuery的解决方式》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack使用jQuery的解决方式》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/01/15/webpack-externals-jQuery/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3aS27DMAwFwN7/0i3QVVHUziMpJikwXgX5WBotTOWJHx/x9fl93b+T/Orn+z8/vXpdHbF54eHh4bWmfnVdTai6KPd3uPr0fgnu54yHh4e3zcsnNykJvSW4LyQPxsXDw8N7KW97B1stDHh4eHj/kZeUivuiUt124+Hh4b0PL3mU9x791S14cp+VrAUPDw8v5vUig9e+Xjzfw8PDwxsEB9WHfl4A8sIzmi0eHh7eAq833bwJYLLV7m3Ko38MeHh4eANe73Hci1yry5FEDw8aC/Dw8PAWeL3Dqt72ujrppKWguuh4eHh4c171MP4spjdKXszw8PDwNni9xqn81vmDvhpDFKIKPDw8vKO8XkDQCwJGIUJxu/9H3cPDw8M7xJsPcxZQvX/hGAwPDw9vgZeHAsk3q6VlEvVGYQQeHh7eE3l5tFo9cztcAK4KDx4eHt5RXvXQqxfylh/lp0INPDw8vKfzqiFvskz5IVm1iaGZUuPh4eEVefNjqt5EkxHz7+RFBQ8PD2/Oq26dq71MkwavA9trPDw8vDVe77CqugVPpt5b3AdhBB4eHt5RXv6DXhPV2aOyfEQ8PDy8Pd7n4JocfeWFpBrvRnkzHh4e3iFeL8xNHuK9WDZfpksqHh4e3gKvGozmx2B5W1UvtK2OjoeHh3eKNw9w8xii3MUQwx70lOHh4eGt8fJbP3MzPWrPwsPDw1vgTf6z947581LRGyUqYHh4eHgDXu/Qqxr19r6fl43RPwY8PDy8Iu9UuDAh9YIMPDw8vNfy8hg32SLPT+R6UcXlPPHw8PDWeL0MY7I0K5vjU4kIHh4e3iFe77Aqbxeo5s3RnfHw8PDegJdPuro5znmFIoSHh4e3xsu3xdXHfd6mMGnVupwJHh4e3gJv8o8+bwKoNhBUmwZWAgs8PDy839cXXY5K38teaw8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '大圣巴巴的博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '大圣巴巴的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

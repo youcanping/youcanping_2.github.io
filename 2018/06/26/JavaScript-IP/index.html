@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JavaScript 获取IP地址 | 大圣巴巴的博客 | 记录生活点滴，分享前端技术，学习新的知识，共同进步成长！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript 获取IP地址">
+    <meta name="description" content="前端WEB获取IP地址问题  淘宝IP地址库本人比较喜欢用淘宝的IP地址接口，支持查询本机IP和指定IP，精确度也挺高的。  淘宝IP地址库首页  使用说明 请求接口（GET）： 1/service/getIpInfo.php?ip=[ip地址字串]  响应信息： 1（json格式的）国家 、省（自治区或直辖市）、市（县）、运营商  返回数据格式： 12345678910111213141516">
+<meta name="keywords" content="JavaScript 获取IP地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 获取IP地址">
+<meta property="og:url" content="https://youcanping.coding.me/2018/06/26/JavaScript-IP/index.html">
+<meta property="og:site_name" content="大圣巴巴的博客">
+<meta property="og:description" content="前端WEB获取IP地址问题  淘宝IP地址库本人比较喜欢用淘宝的IP地址接口，支持查询本机IP和指定IP，精确度也挺高的。  淘宝IP地址库首页  使用说明 请求接口（GET）： 1/service/getIpInfo.php?ip=[ip地址字串]  响应信息： 1（json格式的）国家 、省（自治区或直辖市）、市（县）、运营商  返回数据格式： 12345678910111213141516">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-04T06:17:23.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 获取IP地址">
+<meta name="twitter:description" content="前端WEB获取IP地址问题  淘宝IP地址库本人比较喜欢用淘宝的IP地址接口，支持查询本机IP和指定IP，精确度也挺高的。  淘宝IP地址库首页  使用说明 请求接口（GET）： 1/service/getIpInfo.php?ip=[ip地址字串]  响应信息： 1（json格式的）国家 、省（自治区或直辖市）、市（县）、运营商  返回数据格式： 12345678910111213141516">
+    
+        <link rel="alternate" type="application/atom+xml" title="大圣巴巴的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/bg.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ds.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">大圣巴巴</h5>
+          <a href="mailto:youcanping2008@163.com" title="youcanping2008@163.com" class="mail">youcanping2008@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/youcanping" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/message"  >
+                <i class="icon icon-lg icon-comments"></i>
+                留言
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/collection"  >
+                <i class="icon icon-lg icon-thumbs-up"></i>
+                收藏
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript 获取IP地址</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript 获取IP地址</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-26T15:04:44.000Z" itemprop="datePublished" class="page-time">
+  2018-06-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#淘宝IP地址库"><span class="post-toc-number">1.</span> <span class="post-toc-text">淘宝IP地址库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用说明"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">使用说明</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#httpbin"><span class="post-toc-number">2.</span> <span class="post-toc-text">httpbin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取IP地址"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">获取IP地址</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#返回数据"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">返回数据</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-JavaScript-IP"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript 获取IP地址</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-26 15:04:44" datetime="2018-06-26T15:04:44.000Z"  itemprop="datePublished">2018-06-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><a href="https://segmentfault.com/q/1010000010330099" target="_blank" rel="noopener">前端WEB获取IP地址问题</a></p>
+</blockquote>
+<h2 id="淘宝IP地址库"><a href="#淘宝IP地址库" class="headerlink" title="淘宝IP地址库"></a>淘宝IP地址库</h2><p>本人比较喜欢用淘宝的IP地址接口，支持查询本机IP和指定IP，精确度也挺高的。</p>
+<ul>
+<li><a href="http://ip.taobao.com/" target="_blank" rel="noopener">淘宝IP地址库首页</a></li>
+</ul>
+<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><ol>
+<li><p>请求接口（GET）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/service/getIpInfo.php?ip=[ip地址字串]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>响应信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（json格式的）国家 、省（自治区或直辖市）、市（县）、运营商</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回数据格式：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        <span class="attr">"ip"</span>: <span class="string">"210.75.225.254"</span>,</span><br><span class="line">        <span class="attr">"country"</span>: <span class="string">"中国"</span>,</span><br><span class="line">        <span class="attr">"area"</span>: <span class="string">"华北"</span>,</span><br><span class="line">        <span class="attr">"region"</span>: <span class="string">"北京市"</span>,</span><br><span class="line">        <span class="attr">"city"</span>: <span class="string">"北京市"</span>,</span><br><span class="line">        <span class="attr">"county"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="attr">"isp"</span>: <span class="string">"电信"</span>,</span><br><span class="line">        <span class="attr">"country_id"</span>: <span class="string">"86"</span>,</span><br><span class="line">        <span class="attr">"area_id"</span>: <span class="string">"100000"</span>,</span><br><span class="line">        <span class="attr">"region_id"</span>: <span class="string">"110000"</span>,</span><br><span class="line">        <span class="attr">"city_id"</span>: <span class="string">"110000"</span>,</span><br><span class="line">        <span class="attr">"county_id"</span>: <span class="string">"-1"</span>,</span><br><span class="line">        <span class="attr">"isp_id"</span>: <span class="string">"100017"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<ul>
+<li>其中code的值的含义为，0：成功，1：失败。</li>
+<li>获取本机IP<a href="http://ip.taobao.com/service/getIpInfo.php?ip=myip" target="_blank" rel="noopener">http://ip.taobao.com/service/getIpInfo.php?ip=myip</a></li>
+</ul>
+</blockquote>
+<h2 id="httpbin"><a href="#httpbin" class="headerlink" title="httpbin"></a>httpbin</h2><blockquote>
+<p><a href="http://httpbin.org/" target="_blank" rel="noopener">http://httpbin.org/</a></p>
+</blockquote>
+<h3 id="获取IP地址"><a href="#获取IP地址" class="headerlink" title="获取IP地址"></a>获取IP地址</h3><p><a href="http://httpbin.org/ip" target="_blank" rel="noopener">http://httpbin.org/ip</a></p>
+<h3 id="返回数据"><a href="#返回数据" class="headerlink" title="返回数据"></a>返回数据</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"origin"</span>: <span class="string">"67.209.191.219"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-08-04T06:17:23.016Z" itemprop="dateUpdated">2018-08-04 06:17:23</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/2018/06/26/JavaScript-IP/" target="_blank" rel="external">https://youcanping.coding.me/2018/06/26/JavaScript-IP/</a>
+        
+    </div>
+    <footer>
+        <a href="https://youcanping.coding.me">
+            <img src="/img/ds.png" alt="大圣巴巴">
+            大圣巴巴
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-获取IP地址/">JavaScript 获取IP地址</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/&title=《JavaScript 获取IP地址》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/&title=《JavaScript 获取IP地址》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/06/26/JavaScript-IP/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript 获取IP地址》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/06/27/web-浏览器同源策略/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">浏览器同源策略</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/21/JavaScript学习笔记-基础知识/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JavaScript学习笔记-基础知识</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '昵称,邮箱,链接'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "dr87fQovAE7UUJOFUWV5coSh-gzGzoHsz",
+            appKey: "Vi8BjFW3Wyezfwrecw2luC3c",
+            avatar: "mm",
+            placeholder: "欢迎留言",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WeChatQR.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WeChatQR.png" data-alipay="/img/AliPayQR.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>大圣巴巴 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/&title=《JavaScript 获取IP地址》 — 大圣巴巴的博客&pic=https://youcanping.coding.me/img/ds.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/&title=《JavaScript 获取IP地址》 — 大圣巴巴的博客&source=前端爱好者" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://youcanping.coding.me/2018/06/26/JavaScript-IP/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript 获取IP地址》 — 大圣巴巴的博客&url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/&via=https://youcanping.coding.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://youcanping.coding.me/2018/06/26/JavaScript-IP/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACFUlEQVR42u3awW7rMAwEwPz/T7vXBzwk3aWcApZGpyJJZY0PBEXy9YrX9Wb9++3n33/e+f//en1jYWBgPJZxfVzJb9qD3vVcDAyM0xizx7ffzqiff4+BgYEx23p29PwVYGBgYKwcfRaaMTAwMBJGvl1SaEtKb3nAvfkujoGB8UBGXnX/+7+/0t/AwMB4FOMqVx5Y7/okOhUGBsbWjLY0dm9IXQm4GBgYpzFmYbQ9aJvjJaeKMlkMDIwtGCtJXh4E8xRwNtKBgYGxKyMp4udhtAW0pb23e2JgYGzNaNuQsyZlO/6VlPmK1BADA2MjxuyR7ZU1CbXtS8TAwNibMWtPtuW2u17B2ydiYGBszZhNWOXthDzVm12DMTAwzmEkyvX+w6zNUIxZYGBgHMZoSUXSttAGGG6EgYGxBSN/wMp2V7xuPg8GBsYBjDZpW+fNYikGBsbejDaNmw2ern/yCxsDA+NIRn7oNq7PxjuikQsMDIytGUmTsgh/C0dPhjnepoYYGBhbM9oi13qb83NobkkYGBjnMPLAulLKb1PMqOWJgYGxKeMq1ywgtgllTcXAwNiasd5oTDDFRTR+HcPhDwwMjMcy7moA5NT18QsMDIwzGcWtd6FhUJTPWiQGBgZGkMDl1912zyJ7xcDAwCjLbXlj4Ia2BAYGxgGMlYvoCmA2FoaBgXEaYyXvysNxW0r7SlMTAwPjeYwf5ici4LpmtY8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '大圣巴巴的博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '大圣巴巴的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
